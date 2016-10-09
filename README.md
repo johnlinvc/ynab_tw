@@ -1,8 +1,4 @@
-# YnabTw
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ynab_tw`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+# YnabTw: Convert Taiwan banks's exported csv to YNAB's format
 
 ## Installation
 
@@ -22,7 +18,10 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+``` bash
+$ bundle exec ynab_tw -b cathay withdraw.csv
+10/03/2016, 自行提款,, 00000000  , 5000,
+```
 
 ## Development
 
@@ -32,5 +31,5 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/ynab_tw.
+Bug reports and pull requests are welcome on GitHub at https://github.com/johnlinvc/ynab_tw.
 
