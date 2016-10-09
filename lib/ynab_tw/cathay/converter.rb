@@ -30,7 +30,8 @@ module YnabTw::Cathay
     def convert(filename)
       csv = parse(filename)
       new_csv = convert_format(csv)
-      new_csv.map(&:to_csv).join("")
+      header = "Date,Payee,Category,Memo,Outflow,Inflow\n"
+      header + new_csv.map(&:to_csv).join("")
     end
 
   end
