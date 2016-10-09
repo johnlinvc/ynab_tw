@@ -14,11 +14,23 @@ module YnabTw::Cathay
       return csv
     end
 
+    def convert_format(csv)
+      csv.each.map do |row|
+        [
+          row["date"],
+          row["info"],
+          nil,
+          "#{row["memo"]} #{row["extra"]}",
+          row["withdraw"],
+          row["deposit"]
+        ]
+      end
+    end
+
     def convert(filename)
-      result = nil
       csv = parse(filename)
-      p csv
-      result
+      new_csv = convert_format(csv)
+      new_csv.map(&:to_csv).join("")
     end
 
   end
