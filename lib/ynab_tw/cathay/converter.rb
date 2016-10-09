@@ -17,12 +17,12 @@ module YnabTw::Cathay
     def convert_format(csv)
       csv.each.map do |row|
         [
-          row["date"],
+          DateTime.parse(row["date"]).strftime("%m/%d/%Y"),
           row["info"],
           nil,
           "#{row["memo"]} #{row["extra"]}",
           row["withdraw"],
-          row["deposit"]
+          row["deposit"],
         ]
       end
     end
