@@ -21,7 +21,8 @@ end
 parser.parse!
 
 CONVERTERS = {
-  "cathay" => YnabTw::Cathay::Converter
+  "cathay" => YnabTw::Cathay::Converter,
+  "cathay_credit" => YnabTw::Cathay::CreditConverter,
 }
 
 filename = ARGV[0]
