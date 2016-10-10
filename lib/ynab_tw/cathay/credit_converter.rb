@@ -20,7 +20,7 @@ module YnabTw::Cathay
           row["date"] + DateTime.now.strftime("/%Y"),
           row["info"],
           nil,
-          "#{row["card_no"]}",
+          "card_no:#{row["card_no"]}",
           row["withdraw"],
           0,
         ]
