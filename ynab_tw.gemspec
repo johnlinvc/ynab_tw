@@ -12,6 +12,7 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{Convert Taiwan bank export CSVs to YNAB CSV format}
   spec.description   = %q{Convert Taiwan bank export CSVs to YNAB CSV format}
   spec.homepage      = "http://github.com/johnlinvc/ynab_tw"
+  spec.licenses      = ['MIT']
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
