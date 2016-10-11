@@ -1,0 +1,43 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'ynab_tw'
+require 'optparse'
+
+options = {}
+parser = OptionParser.new do |opts|
+  opts.banner = "Usage: ynab_tw -b mybank data.csv"
+
+  opts.on("-bBANK", "--bank=BANK", "Bank to convert from") do |b|
+    options[:bank] = b
+  end
+
+  opts.on("-h", "--help", "show this help") do |h|
+    puts opts
+    exit -1
+  end
+
+end
+parser.parse!
+
+CONVERTERS = {
+  "cathay" => YnabTw::Cathay::Converter,
+  "cathay_credit" => YnabTw::Cathay::CreditConverter,
+}
+
+filename = ARGV[0]
+bank = options[:bank]
+
+def show_missing(name, arg, parser)
+  unless arg
+    puts "missing #{name}"
+    puts parser
+    exit -1
+  end
+end
+
+show_missing("csv", filename, parser)
+show_missing("bank", bank, parser)
+
+converter = CONVERTERS[bank].new
+puts converter.convert(filename)
