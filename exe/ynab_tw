@@ -23,6 +23,7 @@ parser.parse!
 CONVERTERS = {
   "cathay" => YnabTw::Cathay::Converter,
   "cathay_credit" => YnabTw::Cathay::CreditConverter,
+  "first_bank_credit" => YnabTw::FirstBank::CreditConverter,
 }
 
 filename = ARGV[0]
